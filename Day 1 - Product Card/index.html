@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            background: #f9f9f9;
+            ;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            transition: transform 0.2s;
+
+        }
+
+        .product-card:hover {
+    transform: scale(1.02);
+  }
+
+  .product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: auto;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#">
+            <img src="../assets/logo.png" alt="Logo" />
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#products">
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="#reviews">
+                        Reviews
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-label="Product List">
+            <article class="product-card">
+                <img src="../assets/product.jpeg" />
+                <h2>Title</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus fugiat maxime incidunt
+                    reprehenderit libero atque molestiae est ratione nulla minus ipsam id, voluptatem aperiam
+                    perspiciatis
+                    mollitia! Aliquid distinctio repudiandae magnam.</p>
+                <span>Price 100/-</span>
+                <button>Add to cart</button>
+            </article>
+
+            <article class="product-card">
+                <img src="../assets/product.jpeg" alt="product">
+                <h2>Noise cancelling headphones</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptas. Consectetur totam,
+                    voluptates commodi eius odit, facere accusamus vero maiores asperiores magni neque consequatur ipsam
+                    ex, nihil perferendis cum blanditiis?</p>
+                <p><strong>$199.99</strong></p>
+                <button>Add to cart</button>
+            </article>
+
+            <article class="product-card">
+                <img src="../assets//product.jpeg" alt="Smart Lamp" />
+                <h2>Smart Lamp</h2>
+                <p>Control brightness and color with your voice.</p>
+                <p><strong>$89.99</strong></p>
+                <button>Add to Cart</button>
+            </article>
+        </section>
+    </main>
+
+    <script>
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () =>{
+                btn.textContent = "✓ Added!";
+                btn.disabled = true;
+                btn.style.backgroundColor = "#28a745"
+
+            })
+        })
+
+    </script>
+
+</body>
+
+
+</html>
